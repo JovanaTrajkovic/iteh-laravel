@@ -15,12 +15,12 @@ return new class extends Migration
     {
 
 
-        Schema::create('agencijas', function (Blueprint $table) {
+        Schema::create('agencija_za_nekretnines', function (Blueprint $table) {
             $table->id();
             $table->string('naziv');
             $table->string('adresa');
             $table->string('email');
-            $table->integer('brojTelefona');
+            $table->string('brojTelefona');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agencijas');
+        Schema::dropIfExists('agencija_za_nekretnines');
     }
 };

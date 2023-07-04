@@ -10,7 +10,14 @@ use App\Models\Agent;
 class Klijent extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'ime',
+        'prezime',
+        'email',
+        'brojTelefona',
+        'agent_id'
 
+    ];
     public function agenti(){
         return $this->belongsTo(Agent::class);
     }

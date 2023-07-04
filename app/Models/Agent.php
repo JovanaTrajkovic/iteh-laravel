@@ -9,6 +9,19 @@ use App\Models\AgencijaZaNekretnine;
 class Agent extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+           'ime',
+           'prezime',
+           'email',
+           'pozicija',
+           'brojRacuna',
+           'agencija_id'
+          ];
+
+
+
+
     public function agencija(){
         return $this->belongsTo(AgencijaZaNekretnine::class);
     }

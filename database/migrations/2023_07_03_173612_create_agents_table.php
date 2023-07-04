@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('prezime');
             $table->string('email');
             $table->string('pozicija');
-            $table->foreignId('agencija_id')->constrained('agencijas');
+            $table->foreignId('agencija_id')->constrained('agencija_za_nekretnines');
             $table->timestamps();
         });
     }

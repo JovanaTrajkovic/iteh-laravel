@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\AgencijaZaNekretnineSeeder;
+use Database\Seeders\AgentSeeder;
+ use Database\Seeders\KlijentSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $an = new AgencijaZaNekretnineSeeder();
+        $ag = new AgentSeeder();
+        $kl = new KlijentSeeder();
+        $an->run();
+        $ag->run();
+        $kl->run();
     }
 }
