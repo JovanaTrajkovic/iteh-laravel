@@ -71,6 +71,15 @@ class AgencijaZaNekretnineController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function show($id)
+     {
+         $agencija =AgencijaZaNekretnine::find($id);
+         if ($agencija) {
+           return new AgencijaZaNekretnineResource($agencija);
+         } else {
+             return response()->json('Agencija koju zelite da nadjete ne postoji u bazi!');
+              }
+     }
 
 
 
