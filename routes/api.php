@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AgencijaZaNekretnineController;
 use App\Http\Controllers\API\AgentController;
+use App\Http\Controllers\API\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('agencija_za_nekretnine',AgencijaZaNekretnineController::class);
-Route::resource('agent',AgentController::class);
+//Route::resource('agencija_za_nekretnine',AgencijaZaNekretnineController::class);
+//Route::resource('agent',AgentController::class);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+     Route::resource('agencija_za_nekretnine',AgencijaZaNekretnineController::class);
+     Route::resource('agent',AgentController::class);
+     Route::post('/logout', [AuthController::class, 'logout']);
+
+});
