@@ -70,7 +70,7 @@ class AgencijaZaNekretnineController extends Controller
      * @param  \App\Models\AgencijaZaNekretnine  $agencijaZaNekretnine
      * @return \Illuminate\Http\Response
      */
-   +
+
 
 
 
